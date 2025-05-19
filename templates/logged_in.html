@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #000000;
+            font-family: 'Open Sans', sans-serif;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .welcome-container {
+            background: #1a1a1a;
+            padding: 40px 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+        }
+
+        .welcome-container h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .welcome-container p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: #b0b0b0;
+        }
+
+        .btn-logout {
+            background-color: #4CAF50;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 6px;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-logout:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <h1>Welcome, {{ user_name }}!</h1>
+        <p>We're glad to have you here.</p>
+        <a href="{{ url_for('logout') }}" class="btn-logout">Logout</a>
+    </div>
+</body>
+</html>

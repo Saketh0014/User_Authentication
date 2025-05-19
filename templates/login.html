@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <div class="login-container">
+        {% if get_flashed_messages(with_categories=true) %}
+            <div class="flash-messages">
+              {% for category, message in get_flashed_messages(with_categories=true) %}
+                <div class="flash-message {{ category|e }}">{{ message|e }}</div>
+              {% endfor %}
+            </div>
+        {% endif %}
+        <form class="login-form" action="/login" method="POST">
+            <h2>Login</h2>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required />
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+            <button type="submit">Log In</button>
+        </form>
+    <div class="create-account-box">
+        <p>Don't have an account? <a href="/signup">Create an account</a></p>
+    </div>
+</div>
+</body>
+</html>
